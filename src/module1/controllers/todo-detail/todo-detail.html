@@ -1,0 +1,17 @@
+<md-toolbar class="md-primary">
+    <h1 class="md-toolbar-tools">
+        {{detail.todo.name}}
+    </h1>
+</md-toolbar>
+<md-content>
+    <div layout="row"
+         layout-wrap>
+        <div flex="50">
+            <md-checkbox ng-model="detail.todo.done"
+                         aria-label="Checkbox 1">
+                Status: {{ detail.todo.done ? 'Complete':'Incomplete'}}
+            </md-checkbox>
+        </div>
+    </div>
+</md-content>
+

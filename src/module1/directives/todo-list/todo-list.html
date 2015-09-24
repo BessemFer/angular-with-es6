@@ -1,0 +1,24 @@
+<md-content>
+    <fieldset class="standard">
+        <legend>Todos</legend>
+        <md-list>
+            <md-subheader class="md-no-sticky">Active Todos ({{active.length}})</md-subheader>
+            <md-list-item ng-repeat="item in active = (hd.list | filter:{done:false})">
+                <md-checkbox ng-model="item.done"></md-checkbox>
+                <p>{{item.name}}</p>
+                <md-button ui-sref="app.detail({name: item.name})">
+                    Details
+                </md-button>
+            </md-list-item>
+            <md-subheader class="md-no-sticky">Completed Todos ({{completed.length}})</md-subheader>
+            <md-list-item ng-repeat="item in completed = (hd.list | filter:{done:true})">
+                <md-checkbox ng-model="item.done"></md-checkbox>
+                <p>{{item.name}}</p>
+                <md-button ui-sref="app.detail({name: item.name})">
+                    Details
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </fieldset>
+</md-content>
+

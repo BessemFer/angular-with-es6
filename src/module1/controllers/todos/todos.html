@@ -1,0 +1,26 @@
+<md-toolbar class="md-primary">
+    <h1 class="md-toolbar-tools">
+        My Todos
+    </h1>
+</md-toolbar>
+<section layout
+         layout-align="center center">
+    <div flex="33">
+        <form name="todoForm"
+              ng-submit="todos.addTodo(todos.form.name)">
+            <md-input-container>
+                <label>Todo Name</label>
+                <input required
+                       name="name"
+                       ng-model="todos.form.name"
+                       placeholder="todo name here"/>
+
+                <div ng-messages="todoForm.name.$error && !todoForm.name.$pristine">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+        </form>
+
+        <todo-list></todo-list>
+    </div>
+</section>
